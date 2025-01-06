@@ -1,0 +1,12 @@
+INSERT INTO employees (
+	employee_id,
+	name,
+	email,
+	phone_number,
+	department_id)
+VALUES (
+	'{{insert_form.formData.employee_id}}',
+	'{{insert_form.formData.name}}',
+	'{{insert_form.formData.email}}',
+	'{{insert_form.formData.phone_number}}',
+	'{{insert_form.formData.department_id}}');
