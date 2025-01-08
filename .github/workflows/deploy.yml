@@ -34,7 +34,7 @@ jobs:
           sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no devadmin@135.181.199.88 << 'EOF'
             cd ~/appsmith
             export SUDO_PASSWORD="$SUDO_PASSWORD"
-            echo "$SUDO_PASSWORD" | sudo -S git pull origin master
-            echo "$SUDO_PASSWORD" | sudo -S docker compose down
-            echo "$SUDO_PASSWORD" | sudo -S docker compose up -d
+            echo "D3v@pr1v@t3" | sudo -S git pull origin master
+            echo "D3v@pr1v@t3" | sudo -S docker compose down
+            echo "D3v@pr1v@t3" | sudo -S docker compose up -d
           EOF
