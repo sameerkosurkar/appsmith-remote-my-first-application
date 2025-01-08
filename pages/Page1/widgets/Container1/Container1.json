@@ -1,5 +1,5 @@
 {
-  "backgroundColor": "#14532d",
+  "backgroundColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderColor": "#fff",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "0",
@@ -38,6 +38,9 @@
     },
     {
       "key": "boxShadow"
+    },
+    {
+      "key": "backgroundColor"
     }
   ],
   "dynamicHeight": "FIXED",
