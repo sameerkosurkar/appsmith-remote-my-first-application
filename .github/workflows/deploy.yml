@@ -1,0 +1,29 @@
+name: Deploy Appsmith
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Install SSH client
+      - name: Install SSH client
+        run: sudo apt-get install -y openssh-client
+
+      # Step 3: Deploy to remote server
+      - name: Deploy to remote server
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no devadmin@135.181.199.88 << 'EOF'
+            cd ~/appsmith-instance
+            git pull origin main
+            docker-compose down
+            docker-compose up -d
+          EOF
