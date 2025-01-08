@@ -20,10 +20,10 @@ jobs:
 
       # Step 3: Debug SUDO password
       - name: Debug Password
-        run: |
-          echo "Checking if SUDO_PASSWORD is set: ${SUDO_PASSWORD:+Yes}"
         env:
           SUDO_PASSWORD: ${{ secrets.SUDO_PASSWORD }}
+        run: |
+          echo "Checking if SUDO_PASSWORD is set: $SUDO_PASSWORD"
 
       # Step 4: Deploy to remote server
       - name: Deploy to remote server
