@@ -23,7 +23,7 @@ jobs:
         env:
           SUDO_PASSWORD: ${{ secrets.SUDO_PASSWORD }}
         run: |
-          echo "Checking if SUDO_PASSWORD is set: $SUDO_PASSWORD"
+          echo "Checking if SUDO_PASSWORD is set: X$SUDO_PASSWORD"
 
       # Step 4: Deploy to remote server
       - name: Deploy to remote server
