@@ -18,7 +18,14 @@ jobs:
       - name: Install SSH client
         run: sudo apt-get install -y openssh-client
 
-      # Step 3: Deploy to remote server
+      # Step 3: Debug SUDO password
+      - name: Debug Password
+        run: |
+          echo "Checking if SUDO_PASSWORD is set: ${SUDO_PASSWORD:+Yes}"
+        env:
+          SUDO_PASSWORD: ${{ secrets.SUDO_PASSWORD }}
+
+      # Step 4: Deploy to remote server
       - name: Deploy to remote server
         env:
           SSH_PASSWORD: ${{ secrets.SSH_PASSWORD }}
