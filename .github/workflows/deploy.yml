@@ -24,6 +24,6 @@ jobs:
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no devadmin@135.181.199.88 << 'EOF'
             cd ~/appsmith
             git pull origin master
-            docker-compose down
-            docker-compose up -d
+            docker compose down
+            docker compose up -d
           EOF
